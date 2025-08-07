@@ -1,0 +1,8 @@
+flask
+nltk
+numpy
+scikit-learn
+python-dotenv
+flask-cors
+gunicorn
+openai==0.28
