@@ -67,6 +67,12 @@ def find_best_match(user_input, threshold=0.6):
         return pattern_to_intent[matched_pattern], best_match_score
     return None, best_match_score
 
+
+@app.route("/")
+def home():
+    return "Hello from Flask on Vercel!,the file is running successfully."
+
+
 @app.route('/chat', methods=['POST'])
 def chat():
     try:
@@ -116,5 +122,5 @@ def chat():
 def health_check():
     return jsonify({'status': 'healthy'}), 200
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+# ✅ Vercel looks for this 'app' object when importing the module
+app = app
